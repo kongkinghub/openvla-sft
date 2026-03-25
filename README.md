@@ -1,6 +1,23 @@
-# OpenVLA-LoRA 微调项目复盘（完结）
+# OpenVLA-LoRA 微调项目
 
-本仓库记录我在 OpenVLA 上进行 LoRA 微调与 LIBERO-Spatial 评估的完整过程。
+A800 80G
+
+torchrun --standalone --nnodes 1 --nproc-per-node 1 vla-scripts/finetune.py \
+  --vla_path "openvla/openvla-7b" \
+  --data_root_dir "/datadisk/datasets/openvla-libero-spatial" \
+  --dataset_name "libero_spatial_no_noops" \
+  --run_root_dir "/datadisk/checkpoints" \
+  --adapter_tmp_dir "/datadisk/adapter_tmp" \
+  --lora_rank 32 \
+  --batch_size 16 \
+  --grad_accumulation_steps 1 \
+  --learning_rate 5e-4 \
+  --image_aug True \
+  --wandb_project "openvla-finetune" \
+  --wandb_entity "zsccyd" \
+  --save_steps 500 \
+  --max_steps 8000
+
 
 ## 结果总览
 
