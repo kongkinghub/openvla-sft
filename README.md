@@ -4,8 +4,8 @@
 
 ## 结果总览
 
-- `8000 steps`：评估脚本成功率 `38%`，肉眼观察约 `58%`。
-- `6500 steps`：评估脚本成功率 `52%`，肉眼观察约 `65%`。
+- `8000 steps`：评估脚本成功率 `38%`，肉眼观察约 `78%`。
+- `6500 steps`：评估脚本成功率 `52%`，肉眼观察约 `82%`。
 - 结论：`6500 steps` 综合表现更好。
 
 ---
@@ -23,16 +23,14 @@
 
 ## 视频展示（动图）
 
-> 以下从 `2026_03_24` 中挑选了成功与失败样本，并转换为 GIF 便于在 README 直接查看。
-
-| Episode | 任务（Task） | 结果 | 原视频 | 动图预览 |
-|---|---|---|---|---|
-| 17:59:48 / ep7 | pick up black bowl between plate and ramekin | ✅ 成功 | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=7--success=True--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/success_ep7_between_plate_ramekin.gif) |
-| 17:59:48 / ep16 | pick up black bowl between plate and ramekin | ✅ 成功 | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=16--success=True--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/success_ep16_between_plate_ramekin.gif) |
-| 18:17:59 / ep9 | pick up black bowl in top drawer | ✅ 成功 | [mp4](./2026_03_24/2026_03_24-18_17_59--episode=9--success=True--task=pick_up_the_black_bowl_in_the_top_drawer_of_the_wo.mp4) | ![](./2026_03_24/gifs/success_ep9_top_drawer.gif) |
-| 17:59:48 / ep2 | pick up black bowl between plate and ramekin | ❌ 失败 | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=2--success=False--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/fail_ep2_between_plate_ramekin.gif) |
-| 17:59:48 / ep14 | pick up black bowl between plate and ramekin | ❌ 失败 | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=14--success=False--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/fail_ep14_between_plate_ramekin.gif) |
-| 18:17:59 / ep11 | pick up black bowl on ramekin and place it | ❌ 失败 | [mp4](./2026_03_24/2026_03_24-18_17_59--episode=11--success=False--task=pick_up_the_black_bowl_on_the_ramekin_and_place_it.mp4) | ![](./2026_03_24/gifs/fail_ep11_on_ramekin.gif) |
+| 任务（Task） | 结果 | 动图预览 |
+|---|---|---|
+| pick up black bowl between plate and ramekin | ✅ 成功 | ![](./demos/gifs/success_ep7_between_plate_ramekin.gif) |
+| pick up black bowl between plate and ramekin | ✅ 成功 | ![](./demos/gifs/success_ep16_between_plate_ramekin.gif) |
+| pick up black bowl in top drawer | ✅ 成功 | ![](./demos/gifs/success_ep9_top_drawer.gif) |
+| pick up black bowl between plate and ramekin | ❌ 失败（冻结） | ![](./demos/gifs/fail_ep2_between_plate_ramekin.gif) |
+| pick up black bowl between plate and ramekin | ❌ 失败（冻结） | ![](./demos/gifs/fail_ep14_between_plate_ramekin.gif) |
+| pick up black bowl on ramekin and place it | ❌ 失败（冻结） | ![](./demos/gifs/fail_ep11_on_ramekin.gif) |
 
 ---
 
@@ -74,7 +72,7 @@
 - `5000 steps`：更敢动，但抓取精度不稳定（失败多为抓偏/掉落）。
 - `8000 steps`：熟悉场景很稳；陌生初始状态下更易冻结（直接不动）。
 
-### 为什么脚本 38% 与肉眼 58% 有差异？
+### 为什么脚本 38% 与肉眼 78% 有差异？
 
 LIBERO 判定通常更严格（位置、姿态、稳定时长等几何约束），因此“看起来完成”不一定计入 benchmark 成功。报告中应以脚本结果为主，人工观察用于补充行为分析。
 
