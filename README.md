@@ -30,15 +30,15 @@
 | 17:59:48 / ep7 | pick up black bowl between plate and ramekin | ✅ 成功 | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=7--success=True--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/success_ep7_between_plate_ramekin.gif) |
 | 17:59:48 / ep16 | pick up black bowl between plate and ramekin | ✅ 成功 | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=16--success=True--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/success_ep16_between_plate_ramekin.gif) |
 | 18:17:59 / ep9 | pick up black bowl in top drawer | ✅ 成功 | [mp4](./2026_03_24/2026_03_24-18_17_59--episode=9--success=True--task=pick_up_the_black_bowl_in_the_top_drawer_of_the_wo.mp4) | ![](./2026_03_24/gifs/success_ep9_top_drawer.gif) |
-| 17:59:48 / ep2 | pick up black bowl between plate and ramekin | ❌ 失败（冻结） | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=2--success=False--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/fail_ep2_between_plate_ramekin.gif) |
-| 17:59:48 / ep14 | pick up black bowl between plate and ramekin | ❌ 失败（冻结） | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=14--success=False--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/fail_ep14_between_plate_ramekin.gif) |
-| 18:17:59 / ep11 | pick up black bowl on ramekin and place it | ❌ 失败（冻结） | [mp4](./2026_03_24/2026_03_24-18_17_59--episode=11--success=False--task=pick_up_the_black_bowl_on_the_ramekin_and_place_it.mp4) | ![](./2026_03_24/gifs/fail_ep11_on_ramekin.gif) |
+| 17:59:48 / ep2 | pick up black bowl between plate and ramekin | ❌ 失败 | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=2--success=False--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/fail_ep2_between_plate_ramekin.gif) |
+| 17:59:48 / ep14 | pick up black bowl between plate and ramekin | ❌ 失败 | [mp4](./2026_03_24/2026_03_24-17_59_48--episode=14--success=False--task=pick_up_the_black_bowl_between_the_plate_and_the_r.mp4) | ![](./2026_03_24/gifs/fail_ep14_between_plate_ramekin.gif) |
+| 18:17:59 / ep11 | pick up black bowl on ramekin and place it | ❌ 失败 | [mp4](./2026_03_24/2026_03_24-18_17_59--episode=11--success=False--task=pick_up_the_black_bowl_on_the_ramekin_and_place_it.mp4) | ![](./2026_03_24/gifs/fail_ep11_on_ramekin.gif) |
 
 ---
 
 ## 关于 `UNNORM_KEY = "bridge_orig"` 与“机械臂不动”
 
-你的判断“反归一化可能是问题根源”是**有道理的**，尤其在以下场景：
+
 
 - 用了不匹配当前任务分布的统计量（例如在 LIBERO 任务上强行使用 `bridge_orig`）。
 - 或者微调权重目录下缺失 `dataset_statistics.json`，导致动作尺度恢复异常。
