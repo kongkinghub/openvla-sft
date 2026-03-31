@@ -21,8 +21,8 @@ torchrun --standalone --nnodes 1 --nproc-per-node 1 vla-scripts/finetune.py \
 
 ## 结果总览
 
-- `8000 steps`：评估脚本成功率 `52%`，肉眼观察约 `70%`。
-- `6500 steps`：评估脚本成功率 `78%`，肉眼观察约 `82%`。
+- `8000 steps`：评估脚本成功率 `52%`。
+- `6500 steps`：评估脚本成功率 `68%`。
 - 结论：`6500 steps` 综合表现更好。
 
 ---
@@ -89,9 +89,7 @@ torchrun --standalone --nnodes 1 --nproc-per-node 1 vla-scripts/finetune.py \
 - `5000 steps`：更敢动，但抓取精度不稳定（失败多为抓偏/掉落）。
 - `8000 steps`：熟悉场景很稳；陌生初始状态下更易冻结（直接不动）。
 
-### 为什么脚本与肉眼有差异？
 
-LIBERO 判定通常更严格（位置、姿态、稳定时长等几何约束），因此“看起来完成”不一定计入 benchmark 成功。报告中应以脚本结果为主，人工观察用于补充行为分析。
 
 ---
 
